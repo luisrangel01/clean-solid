@@ -1,0 +1,58 @@
+(function () {
+    // Resolver sin la triple condicional dentro del if
+    // includes? arrays?
+    function isRedFruit(fruit) {
+        return (fruit.includes("manzana") ||
+            fruit.includes("cereza") ||
+            fruit.includes("ciruela"));
+    }
+    // Simplificar esta función
+    // switch? Object literal? validar posibles colores
+    function getFruitsByColor(color) {
+        if (color === "red")
+            return ["manzana", "fresa"];
+        if (color === "yellow")
+            return ["piña", "banana"];
+        if (color === "purple")
+            return ["moras", "uvas"];
+        throw Error("the color must be: red, yellow, purple");
+    }
+    // Simplificar esta función
+    var isFirstStepWorking = true;
+    var isSecondStepWorking = true;
+    var isThirdStepWorking = true;
+    var isFourthStepWorking = true;
+    function workingSteps() {
+        if (isFirstStepWorking === true) {
+            if (isSecondStepWorking === true) {
+                if (isThirdStepWorking === true) {
+                    if (isFourthStepWorking === true) {
+                        return "Working properly!";
+                    }
+                    else {
+                        return "Fourth step broken.";
+                    }
+                }
+                else {
+                    return "Third step broken.";
+                }
+            }
+            else {
+                return "Second step broken.";
+            }
+        }
+        else {
+            return "First step broken.";
+        }
+    }
+    // isRedFruit
+    console.log({ isRedFruit: isRedFruit("cereza"), fruit: "cereza" }); // true
+    console.log({ isRedFruit: isRedFruit("piña"), fruit: "piña" }); // true
+    //getFruitsByColor
+    console.log({ redFruits: getFruitsByColor("red") }); // ['manzana', 'fresa']
+    console.log({ yellowFruits: getFruitsByColor("yellow") }); // ['piña', 'banana']
+    console.log({ purpleFruits: getFruitsByColor("purple") }); // ['moras', 'uvas']
+    // console.log({ pinkFruits: getFruitsByColor('pink') }); // Error: the color must be: red, yellow, purple
+    // workingSteps
+    console.log({ workingSteps: workingSteps() }); // Cambiar los valores de la línea 31 y esperar los resultados
+})();
